@@ -1,5 +1,9 @@
 <?php
 
+$parola_censurata = $_POST["badWord"];
+$testo_originale = $_POST["originalText"];
+
+$testo_censurato = str_replace("hummus", "**", $testo_originale);
 
 ?>
 
@@ -27,17 +31,29 @@
 
       <div class="col-6">
         <div class="card p-2 ">
-          <h2>Testo originale</h2>
-          <p>testo</p>
-          <p>Lunghezza del testo</p>
+          <h3 class="mb-3">Testo originale</h3>
+          <p>
+            <? echo $testo_originale ?>
+          </p>
+          <p>
+            Lunghezza del testo:
+            <? echo strlen($testo_originale) ?>
+            parole.
+          </p>
         </div>
       </div>
 
       <div class="col-6">
         <div class="card p-2 ">
-          <h2>Testo originale</h2>
-          <p>testo</p>
-          <p>Lunghezza del testo</p>
+          <h3 class="mb-3">Testo censurato</h3>
+          <p>
+            <? echo $testo_censurato ?>
+          </p>
+          <p>
+            Lunghezza del testo:
+            <? echo strlen($testo_censurato) ?>
+            parole.
+          </p>
         </div>
       </div>
 
